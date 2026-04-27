@@ -1,20 +1,27 @@
 package com.crypto.widget
 
+import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
+import android.content.Intent
 import android.widget.RemoteViews
 
 class CryptoWidgetProvider : AppWidgetProvider() {
     
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
-        // This loop updates every copy of the widget if the user dragged multiple to their screen
         for (appWidgetId in appWidgetIds) {
             val views = RemoteViews(context.packageName, R.layout.widget_layout)
             
-            // For now, we are hardcoding a placeholder value. 
-            // We will add the live API fetcher in the next step!
-            views.setTextViewText(R.id.crypto_price_text, "BTC: $65,000")
+            // Keep the tap-to-open Main App logic
+            val intent = Intent(context, MainActivity::class.java)
+            val pendingIntent = PendingIntent.getActivity(
+                context, 0, intent, 
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+            )
+            views.setOnClickPendingIntent(R.id.widget_root, pendingIntent)
+            
+            // The ListView data service will be attached here in the next phase!
             
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }
