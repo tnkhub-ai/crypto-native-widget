@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
-
 android {
     namespace = "com.crypto.widget"
     compileSdk = 34
@@ -14,15 +13,23 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
-
     buildTypes {
         release {
             minifyEnabled = false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-}
+    // 1. ADD THIS BLOCK FOR JAVA
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
 
+    // 2. ADD THIS BLOCK FOR KOTLIN
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
 dependencies {
     implementation 'androidx.core:core-ktx:1.12.0'
 }
