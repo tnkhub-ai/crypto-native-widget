@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
+import android.widget.RemoteViewsService.RemoteViewsFactory
 import android.graphics.Color
+
 
 class WidgetService : RemoteViewsService() {
     override fun onGetViewFactory(intent: Intent): RemoteViewsFactory {
