@@ -42,10 +42,11 @@ class WidgetItemFactory(private val context: Context) : RemoteViewsService.Remot
         views.setTextViewText(R.id.item_change, coin.change)
         
         // Change text color based on positive/negative
+                // Change text color based on positive/negative
         if (coin.isPositive) {
-            views.setTextColor(R.id.item_change, Color.parseColor("#00FF00")) // Green
+            views.setTextColor(R.id.item_change, Color.parseColor("#0ECB81")) // Crypto Green
         } else {
-            views.setTextColor(R.id.item_change, Color.parseColor("#FF0000")) // Red
+            views.setTextColor(R.id.item_change, Color.parseColor("#F6465D")) // Crypto Red
         }
         
         return views

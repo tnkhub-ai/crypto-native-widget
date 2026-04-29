@@ -4,48 +4,52 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:gravity="center_vertical"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp"
-    android:paddingLeft="12dp"
-    android:paddingRight="12dp">
-
-    <TextView
-        android:id="@+id/item_symbol"
-        android:layout_width="45dp"
-        android:layout_height="wrap_content"
-        android:text="BTC"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:textSize="14sp"/>
-
-    <ImageView
-        android:id="@+id/item_sparkline"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="30dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:background="#1AFFFFFF" />
+    android:paddingTop="14dp"
+    android:paddingBottom="14dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
 
     <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+        <TextView
+            android:id="@+id/item_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BTC"
+            android:textColor="#EAECEF"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/USDT"
+            android:textColor="#848E9C"
+            android:textSize="12sp"
+            android:layout_marginLeft="2dp"
+            android:paddingBottom="1dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/item_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="end">
-        <TextView
-            android:id="@+id/item_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="$65,000"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:textSize="14sp"/>
-        <TextView
-            android:id="@+id/item_change"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+2.5%"
-            android:textColor="#00FF00"
-            android:textSize="12sp"/>
-    </LinearLayout>
+        android:text="65,000.00"
+        android:textColor="#EAECEF"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginRight="24dp"/>
+
+    <TextView
+        android:id="@+id/item_change"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:text="+2.50%"
+        android:textColor="#0ECB81"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="right"/>
 </LinearLayout>
